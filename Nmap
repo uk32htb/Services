@@ -1,0 +1,22 @@
+Host discovery 
+sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5
+
+Host Discovery when the IPs are in file calles hosts.lst 
+sudo nmap -sn -oA tnet -iL hosts.lst | grep for | cut -d" " -f5 :- To check if the servers are up from the hosts.lst file 
+
+Command to read XML file in browser
+xsltproc target.xml -o target.html :- Convert HTML to readable HTML 
+
+Add "--script vuln  :- To scan the vulnerabilities" to start the vulnerability scan 
+
+sudo nmap 10.129.2.28 -p 80 -sS -Pn -n --disable-arp-ping --packet-trace -D RND:5 :- Decoy 5 IPs for NMAP
+
+sudo nmap 10.129.2.28 -n -Pn -p 445 -O -S 10.129.2.200 -e tun0 :- “-S is to specific the source IP and -e is to tell from which interface traffic would leave” 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+nmap -sS -v -p- <IP address>
+nmap -sS -sV -A -oA target <IP address> -p asd,asd,asd,asd
+find / -type f -name <service name ftp,shh>* 2>/dev/null | grep scripts :- Command to find the scripts
+
