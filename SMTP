@@ -1,0 +1,25 @@
+Simple Mail Transfer Prtocol :- This is used for sending Email. 
+
+
+TCP port 25 is used for this. New SMTP server uses other port like 587
+
+We can use curl command to get more info about the mails in the server.
+#curl -k 'imaps://<IP address>' --user <user:password>
+#curl -k 'imaps://<IP address>' --user <user:password> -v (we can user verbose (-v) to get connection details) 
+
+
+===================================================================================================
+
+If we have POP3 or IMAP server over SSL, we can use openssl to connect 
+#openssl s_client -connect <IP address>:pop3s
+#openssl s_client -connect <IP address>:imaps
+
+
+
+NOTE :- Below links are imp for SMTP commands
+
+https://www.atmail.com/blog/imap-101-manual-imap-sessions/
+https://donsutherland.org/crib/imap
+https://www.mailenable.com/kb/content/article.asp?ID=ME020711
+
+
