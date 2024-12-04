@@ -1,0 +1,2 @@
+ftp username@<IP address> :- Connect to the FTP server
+ftp> ls -R :- Will list all the files in the server (recursive list) 
