@@ -5,9 +5,11 @@ Step 2) sudo nmap -p1521 -sV <IP address> --open --script oracle-sid-brute :- Br
 
 Step 3) python3 odat.py all -s <IP address> :- To enumerate the server and we can give the credentials saved in the server.
 
-Step 4) Once we have the credentials, we cna connect to the server. 
-        sqlplus <username>/<password>@10.129.204.235/SID
-Step 4) 
+Step 4) Once we have the credentials, we can connect to the server. 
+        sqlplus <username>/<password>@<IP address>/SID
+
+Step 4) We can also connect as other user. 
+        sqlplus <username>/<password>@<IP Address>/SID as sysdba
 
 ==============================================================================================================================================
 If it is not installed, we can run the below shell command to install odat.py
@@ -32,6 +34,12 @@ pip3 install pycryptodome
 
 ==============================================================================================================================================
 
-We can brute force the SID using NMAP, SID is important to enumerate it further 
-  sudo nmap -p1521 -sV <IP address> --open --script oracle-sid-brute
+If we have the an following error 
+        "sqlplus: error while loading shared libraries: libsqlplus.so: cannot open shared object file: No such file or directory"
+
+Run the below command in klai machine 
+sudo sh -c "echo /usr/lib/oracle/12.2/client64/lib > /etc/ld.so.conf.d/oracle-instantclient.conf";sudo ldconfig
+
+
+
 
