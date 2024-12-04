@@ -1,0 +1,6 @@
+dig axfr <domain> @<IP address> :- Zone transfer, will give more domains to explore further 
+
+Beloww are the scipt and program to search sub domains in DNS 
+for sub in $(cat /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt);do dig $sub.<Domain> @<IP> | grep -v ';\|SOA' | sed -r '/^\s*$/d' | grep $sub | tee -a subdomains.txt;done :- We can try this to enumerate the subdomains 
+
+dnsenum --dnsserver <IP address> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt <Domain> :- Same as above
