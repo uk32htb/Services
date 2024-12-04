@@ -1,0 +1,13 @@
+sudo nmap <IP address> -sV -sC -p3306 --script mysql* :- Nmap to run scripts
+mysql -u <username> -h <Host IP address> :- Connecting to Sql server
+myswl -u <usernamr> localhost :- Connecting MySql in the server
+mysql -u <username> -p<password> -h <Host IP address> 
+
+
+Commands to navigate in Database after we are connected 
+
+MySQL [(none)]> show databases; #shows all the databases 
+MySQL [(none)]> select version(); #show the version of the server 
+MySQL [(none)]> use <database name>;
+MySQL [mysql]> show tables; #shows the tables in the selected database 
+
