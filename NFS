@@ -1,0 +1,11 @@
+showmount -e <IP address> :- Will show NFS shares
+
+We can follow below steps to mount the server 
+Step 1) mkdir taregert-NFS #create dir to load the NFS 
+Step 2) sudo mount -t nfs <IP Address>:/ ./target-NFS/ -o nolock
+Step 3) cd ./target-NFS 
+Step 4) tree . #will give the logical tree of files in the NFS 
+
+When we want to unmount 
+Step 1) cd .. #come out of the dir 
+Step 2) sudo umount ./target-NFS
