@@ -1,0 +1,13 @@
+Simple Network Managment Protocol (SNMP) :- Protocol to use monitor Network Devices. UDP port 161 is used for this protocol. 
+
+We can run SNMP walk to check if any user name and password is used in the Cronjob (SNMP v1 and v2 will have cred in plain text) 
+#snmpwalk -v2c -c <public/private> <IP address>
+
+Most common community string is Public and Private 
+If common string is not used, we can brute force the server to get “community string”
+    #onesixtyone -c /usr/share/wordlists/seclists/Discovery/SNMP/snmp.txt <IP address>
+
+
+Once we have the community string we can user “braa” to brute force the Individual OIDs and enumerate the information behind them. 
+#braa <community string>@<IP>:.1.3.6.* (This is the full syntax) 
+
