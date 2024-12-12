@@ -1,0 +1,9 @@
+nmap -p445 --script smb-vuln-ms17-010 <target> :- Nmap script for checking if the device is vulnerable to External Blue. 
+
+crackmapexec smb 10.129.42.197 -u "" -p "" --shares :- SMB map without credentials 
+crackmapexec smb 10.129.42.197 -u "user" -p "password" --shares :- SMB map with credential 
+
+
+Ways to connect to SMB 
+mbclient -U <username> \\\\10.129.42.197\\SHARENAME :- Will ask for credentials 
+
