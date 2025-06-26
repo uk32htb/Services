@@ -11,3 +11,8 @@ mbclient -U <username> \\\\10.129.42.197\\SHARENAME :- Will ask for credentials
 
 smbclient //dc01/linux01 -k -c 'get flag.txt' -no-pass :- Command to downlaod the file without coneecting to SMB 
 
+
+
+
+
+/usr/share/doc/python3-impacket/examples/lookupsid.py thm.corp/guest@10.10.220.153
