@@ -2,17 +2,19 @@ nmap -p445 --script smb-vuln-ms17-010 <target> :- Nmap script for checking if th
 
 crackmapexec smb 10.129.42.197 -u "" -p "" --shares :- SMB map without credentials 
 crackmapexec smb 10.129.42.197 -u "user" -p "password" --shares :- SMB map with credential 
-
+crackmapexec smb 10.129.42.197 -u "anonymous" -p "" --shares :- Anonymous access without password
 
 Ways to connect to SMB 
-mbclient -U <username> \\\\10.129.42.197\\SHARENAME :- Will ask for credentials 
-
+smbclient -U <username> \\\\10.129.42.197\\SHARENAME :- Will ask for credentials 
+smbclinet -u anonymous \\\\10.129.42.197\\<ShareName> :- Access to share with Anonymous account wihout credentials. 
 
 
 smbclient //dc01/linux01 -k -c 'get flag.txt' -no-pass :- Command to downlaod the file without coneecting to SMB 
 
 
+Run the below command if the server is DC. We can get the userlist for this.
+/usr/share/doc/python3-impacket/examples/lookupsid.py thm.corp/guest@10.10.30.103
 
 
-
-/usr/share/doc/python3-impacket/examples/lookupsid.py thm.corp/guest@10.10.220.153
+Note :- 1) thm.corp :- This is the Domain 
+        2) 10.10.220.153 :- This is the DC IP address 
