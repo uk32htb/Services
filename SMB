@@ -22,3 +22,12 @@ Note :- 1) thm.corp :- This is the Domain
 
 Once we have the credentials, we can user evil-winrm to check if we have access. 
 evil-winrm -u <Username> -p <Password> -i <Domain>
+
+
+
+
+umarkhan$ smbclient -N -L //10.129.14.128 :- No auth listing SMB shares
+umarkhan$ smbmap -H 10.129.14.128 :- Other tool to enumerate shares
+umarkhan$ smbmap -H 10.129.14.128 -r notes :- Recursive options to get the files
+umarkhan$ smbmap -H 10.129.14.128 --download "notes\note.txt" :- Downladong file without log in 
+umarkhan$ smbmap -H 10.129.14.128 --upload test.txt "notes\test.txt" :- Uploading file without log in 
